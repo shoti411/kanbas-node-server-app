@@ -133,5 +133,22 @@ const Lab5 = (app) => {
     app.get("/a5/welcome", (req, res) => {
         res.send("Welcome to Assignment 5 !!!!!!");
     });
+
+    app.get("/a5/calculator", (req, res) => {
+        const { a, b, operation } = req.query;
+        let result = 0;
+        switch (operation) {
+          case "add":
+            result = parseInt(a) + parseInt(b);
+            break;
+          case "subtract":
+            result = parseInt(a) - parseInt(b);
+            break;
+          default:
+            result = "Invalid operation";
+        }
+        res.send(result.toString());
+      });
+    
 };
 export default Lab5;
