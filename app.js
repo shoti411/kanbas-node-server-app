@@ -3,13 +3,16 @@ import cors from "cors";
 import express from "express";
 import Hello from "./hello.js";
 import CourseRoutes from "./courses/routes.js";
+import ModuleRoutes from "./modules/routes.js";
 // const express = require("express");
 import Lab5 from "./lab5.js";
 
 const app = express();
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+
 CourseRoutes(app);
+ModuleRoutes(app);
 Hello(app);
 Lab5(app);
 
