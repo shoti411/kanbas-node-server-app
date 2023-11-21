@@ -2,17 +2,17 @@
 import cors from "cors";
 import express from "express";
 import Hello from "./hello.js";
+import CourseRoutes from "./courses/routes.js";
 // const express = require("express");
 import Lab5 from "./lab5.js";
 
 const app = express();
+app.use(express.json());
 app.use(cors());
-
+CourseRoutes(app);
 Hello(app);
 Lab5(app);
 
-
-app.use(express.json());
 
 
 // const hello = (req, res) => {
