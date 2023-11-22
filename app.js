@@ -1,6 +1,6 @@
 // Entry point into node.js http server
 import "dotenv/config";
-import session from "express-session";
+// import session from "express-session";
 import cors from "cors";
 import express from "express";
 import Hello from "./hello.js";
