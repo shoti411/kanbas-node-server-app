@@ -1,4 +1,6 @@
 // Entry point into node.js http server
+import "dotenv/config";
+import session from "express-session";
 import cors from "cors";
 import express from "express";
 import Hello from "./hello.js";
@@ -32,5 +34,5 @@ Lab5(app);
 // });
 
 
-app.listen(4000);
+app.listen(process.env.PORT || 4000);
 
