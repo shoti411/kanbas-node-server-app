@@ -2,6 +2,8 @@
 import "dotenv/config";
 // import session from "express-session";
 import cors from "cors";
+import mongoose from "mongoose";
+mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 import express from "express";
 import Hello from "./hello.js";
 import CourseRoutes from "./courses/routes.js";
