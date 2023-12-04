@@ -3,7 +3,7 @@ import "dotenv/config";
 // import session from "express-session";
 import cors from "cors";
 import mongoose from "mongoose";
-import UserRoutes from "./users/routes.js"
+import UserRoutes from "./users/routes.js";
 mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 import express from "express";
 import Hello from "./hello.js";
@@ -11,9 +11,22 @@ import CourseRoutes from "./courses/routes.js";
 import ModuleRoutes from "./modules/routes.js";
 // const express = require("express");
 import Lab5 from "./lab5.js";
+import session from "express-session";
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:3000",
+}));
+const sessionOptions = {
+    secret: "any string",
+    resave: false,
+    saveUninitialized: false,
+  };
+  app.use(
+    session(sessionOptions)
+  );
+  
 app.use(express.json());
 
 UserRoutes(app);
@@ -21,6 +34,7 @@ CourseRoutes(app);
 ModuleRoutes(app);
 Hello(app);
 Lab5(app);
+
 
 
 
@@ -37,6 +51,7 @@ Lab5(app);
     
 // });
 
+const port = process.env.PORT || 4000;
 
-app.listen(process.env.PORT || 4000);
+app.listen(port);
 
