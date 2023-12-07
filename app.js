@@ -35,6 +35,7 @@ app.use(session(sessionOptions));
 
 
 app.use(express.json());
+const port = process.env.PORT || 4000;
 
 UserRoutes(app);
 CourseRoutes(app);
@@ -58,7 +59,7 @@ Lab5(app);
 
 // });
 
-const port = process.env.PORT || 4000;
+
 
 app.listen(port);
 
