@@ -9,7 +9,7 @@ function UserRoutes(app) {
   const deleteUser = async (req, res) => {
     const status = await dao.deleteUser(req.params.userId);
     res.json(status);
-};
+  };
 
   const findAllUsers = async (req, res) => {
     const users = await dao.findAllUsers();
@@ -63,9 +63,9 @@ function UserRoutes(app) {
 
   const account = async (req, res) => {
     res.json(req.session['currentUser']);
-   };
+  };
 
-   
+
   app.post("/api/users", createUser);
   app.get("/api/users", findAllUsers);
   app.get("/api/users/:userId", findUserById);
