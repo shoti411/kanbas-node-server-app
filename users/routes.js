@@ -46,9 +46,14 @@ function UserRoutes(app) {
   const signin = async (req, res) => {
     const { username, password } = req.body;
     const currentUser = await dao.findUserByCredentials(username, password);
-    req.session['currentUser'] = currentUser;
-    res.json(currentUser);
-  }
+    if (currentUser) {
+      req.session['currentUser'] = currentUser;
+      res.json(currentUser);
+    } else {
+      res.status(400).json(
+        { message: "No user found" });
+    }
+  };
 
   const signout = (req, res) => {
     req.session.destroy();
@@ -59,6 +64,8 @@ function UserRoutes(app) {
   const account = async (req, res) => {
     res.json(req.session['currentUser']);
    };
+
+   
   app.post("/api/users", createUser);
   app.get("/api/users", findAllUsers);
   app.get("/api/users/:userId", findUserById);
