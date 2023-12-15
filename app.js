@@ -4,6 +4,7 @@ import "dotenv/config";
 import cors from "cors";
 import mongoose from "mongoose";
 import UserRoutes from "./users/routes.js";
+import ProjectUserRoutes from "./project/users/routes.js"
 import express from "express";
 import Hello from "./hello.js";
 import CourseRoutes from "./courses/routes.js";
@@ -11,7 +12,10 @@ import ModuleRoutes from "./modules/routes.js";
 // const express = require("express");
 import Lab5 from "./lab5.js";
 import session from "express-session";
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas';
+// To have connected to kanbas database, replace project with kanbas
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING_PROJECT || 'mongodb://127.0.0.1:27017/project';
+//const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas';
+
 mongoose.connect(CONNECTION_STRING);
 
 const app = express();
@@ -37,7 +41,8 @@ app.use(session(sessionOptions));
 app.use(express.json());
 const port = process.env.PORT || 4000;
 
-UserRoutes(app);
+// s
+ProjectUserRoutes(app);
 CourseRoutes(app);
 ModuleRoutes(app);
 Hello(app);
