@@ -5,6 +5,7 @@ function FollowsRoutes(app) {
     const createUserFollowsUser = async (req, res) => {
         const follower = req.session["currentUser"];
         const followed = req.params["followedId"];
+        console.log(followed);
         const follows = await dao.createUserFollowsUser(follower, followed);
         res.json(follows);
     }
@@ -25,8 +26,8 @@ function FollowsRoutes(app) {
     }
     const findFollowedUsersOfUser = async (req, res) => {
         const follower = req.params["userId"];
-        const followed = await dao.findFollowedUsersOfUser(followed);
-        res.json(followers);
+        const followed = await dao.findFollowedUsersOfUser(follower);
+        res.json(followed);
         // const {userId} = req.params;
         // const following = await dao.findUsersFollowedByUser(userId);
         // res.send(followers);
