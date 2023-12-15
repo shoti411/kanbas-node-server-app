@@ -12,6 +12,8 @@ import ModuleRoutes from "./modules/routes.js";
 // const express = require("express");
 import Lab5 from "./lab5.js";
 import session from "express-session";
+import FollowsRoutes from "./project/follows/routes.js";
+import LikesRoutes from "./project/likes/routes.js";
 // To have connected to kanbas database, replace project with kanbas
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING_PROJECT || 'mongodb://127.0.0.1:27017/project';
 //const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas';
@@ -42,6 +44,8 @@ app.use(express.json());
 const port = process.env.PORT || 4000;
 
 // s
+LikesRoutes(app);
+FollowsRoutes(app);
 ProjectUserRoutes(app);
 CourseRoutes(app);
 ModuleRoutes(app);
