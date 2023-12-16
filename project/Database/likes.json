@@ -1,0 +1,38 @@
+[
+    {
+        "user": {
+            "$oid": "65500111ea7ead465908d1fb"
+        },
+        "businessId": "ChIJOUJ8JLd744kR_6K-CWV9F84"
+    },
+    {
+        "user": {
+            "$oid": "657c5c76e1fd35e54e437a46"
+        },
+        "businessId": "ChIJOUJ8JLd744kR_6K-CWV9F84"
+    },
+    {
+        "user": {
+            "$oid": "654ffdd3870c092d5441bc8f"
+        },
+        "businessId": "ChIJOUJ8JLd744kR_6K-CWV9F84"
+    },
+    {
+        "user": {
+            "$oid": "654fff6fea7ead465908d1e8"
+        },
+        "businessId": "ChIJOUJ8JLd744kR_6K-CWV9F84"
+    },
+    {
+        "user": {
+            "$oid": "65500111ea7ead465908d1fb"
+        },
+        "businessId": "ChIJaeYsIUF644kRXPIC1cnluXg"
+    },
+    {
+        "user": {
+            "$oid": "657c5c76e1fd35e54e437a46"
+        },
+        "businessId": "ChIJaeYsIUF644kRXPIC1cnluXg"
+    }
+]
