@@ -25,13 +25,7 @@
     },
     {
         "user": {
-            "$oid": "65500111ea7ead465908d1fb"
-        },
-        "businessId": "ChIJaeYsIUF644kRXPIC1cnluXg"
-    },
-    {
-        "user": {
-            "$oid": "657c5c76e1fd35e54e437a46"
+            "$oid": "654ffdd3870c092d5441bc88"
         },
         "businessId": "ChIJaeYsIUF644kRXPIC1cnluXg"
     }
